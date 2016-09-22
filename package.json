@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "init": "npm install && npm run typings",
-    "test": "tsc src/test/test.ts --outDir dist --sourceMap && cd ./dist/test && mocha",
-    "build": "tsc src/index.ts --outDir dist --sourceMap --noImplicitAny --watch",
     "typings": "typings install",
+    "build": "tsc src/index.ts --outDir dist --sourceMap --noImplicitAny --watch",
+    "webpack": "webpack --entry ./dist/index.js --output-filename ./dist/app.js -d --watch",
+    "release": "webpack --entry ./dist/index.js --output-filename ./dist/app.js -p",
+    "test": "tsc src/test/test.ts --outDir dist --sourceMap && cd ./dist/test && mocha",
     "static": "static ./dist"
   },
   "author": "shule517",
@@ -17,6 +19,7 @@
     "node-static": "^0.7.8",
     "power-assert": "^1.4.1",
     "source-map-support": "^0.4.2",
-    "typings": "^1.3.2"
+    "typings": "^1.3.2",
+    "webpack": "^2.1.0-beta.25"
   }
 }
