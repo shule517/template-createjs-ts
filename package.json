@@ -6,7 +6,7 @@
   "scripts": {
     "init": "npm install && npm run typings",
     "test": "tsc src/test/test.ts --outDir dist --sourceMap && cd ./dist/test && mocha",
-    "build": "tsc src/index.ts --outDir dist --sourceMap --watch",
+    "build": "tsc src/index.ts --outDir dist --sourceMap --noImplicitAny --watch",
     "typings": "typings install",
     "static": "static ./dist"
   },
